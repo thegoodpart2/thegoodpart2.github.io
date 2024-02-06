@@ -14,6 +14,28 @@ const calculateResult = () => {
   }
 }
 
+const deleteLastCharacter = () => {
+  document.calculatorForm.display.value = document.calculatorForm.display.value.slice(0, -1);
+}
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter') {
+    calculateResult();
+  }
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Backspace') {
+    deleteLastCharacter();
+  }
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'c') {
+    clearDisplay();
+  }
+});
+
 const darkMode = () => {
   let element = document.body;
   element.className = "dark-mode";
